@@ -30,7 +30,7 @@ func main() {
     }
 
     // Connect to the server
-    conn, err := net.Dial("tcp", "localhost:8080")
+    conn, err := net.Dial("tcp", "localhost:7980")
     if err != nil {
         fmt.Println("Error connecting to server:", err)
         return
