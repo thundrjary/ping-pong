@@ -10,8 +10,8 @@ import (
 )
 
 func main() {
-    if len(os.Args) < 2 {
-        fmt.Println("Usage: client [private_key_file]")
+    if len(os.Args) < 3 {
+        fmt.Println("Usage: client [private_key_file] [server_name]")
         return
     }
 
@@ -30,7 +30,7 @@ func main() {
     }
 
     // Connect to the server
-    conn, err := net.Dial("tcp", "localhost:7980")
+    conn, err := net.Dial("tcp", os.Args[2]+":8080")
     if err != nil {
         fmt.Println("Error connecting to server:", err)
         return
