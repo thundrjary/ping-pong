@@ -15,14 +15,14 @@ type Config struct {
 func main() {
     // Load the config file
     var config Config
-    _, err := toml.DecodeFile("config.toml", &config)
+    _, err := toml.DecodeFile("keys.toml", &config)
     if err != nil {
         fmt.Println("Error loading config file:", err)
         return
     }
 
     // Listen on port 8080
-    ln, _ := net.Listen("tcp", ":8080")
+    ln, _ := net.Listen("tcp", ":7980")
     defer ln.Close()
 
     // Accept incoming connections
